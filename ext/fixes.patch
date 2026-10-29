@@ -1,0 +1,50 @@
+--- a/c++/pod5_format/c_api.cpp
++++ b/c++/pod5_format/c_api.cpp
+@@ -458,7 +458,7 @@
+         typed_row_data->median_before = cols.median_before->Value(row);
+ 
+         // In V6+ this will be overwritten with 32-bit data.
+-        typed_row_data->channel = cols.channel_16bit->Value(row);
++        typed_row_data->channel = cols.channel_16bit ? cols.channel_16bit->Value(row) : 0;
+         typed_row_data->well = cols.well->Value(row);
+         auto const & pore_type_col = cols.pore_type->indices();
+         typed_row_data->pore_type =
+@@ -1091,13 +1091,13 @@
+     pod5_reset_error();
+ 
+     if (!check_file_not_null(file) || !check_not_null(run_info_index)
+-        || !check_string_not_empty(acquisition_id) || !check_string_not_empty(experiment_name)
+-        || !check_string_not_empty(flow_cell_id) || !check_string_not_empty(flow_cell_product_code)
+-        || !check_string_not_empty(protocol_name) || !check_string_not_empty(protocol_run_id)
+-        || !check_string_not_empty(sample_id) || !check_string_not_empty(sequencing_kit)
+-        || !check_string_not_empty(sequencer_position)
+-        || !check_string_not_empty(sequencer_position_type) || !check_string_not_empty(software)
+-        || !check_string_not_empty(system_name) || !check_string_not_empty(system_type))
++        || !check_not_null(acquisition_id) || !check_not_null(experiment_name)
++        || !check_not_null(flow_cell_id) || !check_not_null(flow_cell_product_code)
++        || !check_not_null(protocol_name) || !check_not_null(protocol_run_id)
++        || !check_not_null(sample_id) || !check_not_null(sequencing_kit)
++        || !check_not_null(sequencer_position)
++        || !check_not_null(sequencer_position_type) || !check_not_null(software)
++        || !check_not_null(system_name) || !check_not_null(system_type))
+     {
+         return g_pod5_error_no;
+     }
+@@ -1106,7 +1106,7 @@
+         [](std::size_t tracking_id_count,
+            char const ** tracking_id_keys,
+            char const ** tracking_id_values) -> pod5::Result<pod5::RunInfoData::MapType> {
+-        if (!check_not_null(tracking_id_keys) || !check_not_null(tracking_id_values)) {
++        if (tracking_id_count != 0 && (!check_not_null(tracking_id_keys) || !check_not_null(tracking_id_values))) {
+             return arrow::Status::Invalid(g_pod5_error_string);
+         }
+ 
+@@ -1114,7 +1114,7 @@
+         for (std::size_t i = 0; i < tracking_id_count; ++i) {
+             auto key = tracking_id_keys[i];
+             auto value = tracking_id_values[i];
+-            if (!check_string_not_empty(key) || !check_string_not_empty(value)) {
++            if (!check_not_null(key) || !check_not_null(value)) {
+                 return arrow::Status::Invalid(g_pod5_error_string);
+             }
+ 

@@ -1,0 +1,122 @@
+[
+  {
+    "read_id": "0000173c-bf67-44e7-9a9c-1ad0bc728e74",
+    "sample_count": 123627,
+    "signal_sha256": "35b7e8b66a4c35c64d630eb16b4da7ee85d4a3522e008ba125514c0467f89f28",
+    "channel": 109,
+    "well": 4,
+    "read_number": 1093,
+    "start_sample": 4534321,
+    "offset": 21.0,
+    "scale": 0.17550019919872284,
+    "sample_rate": 4000
+  },
+  {
+    "read_id": "002fde30-9e23-4125-9eae-d112c18a81a7",
+    "sample_count": 37440,
+    "signal_sha256": "0d3c155989da8ce821c5bb8546e056693164da96a328f82cf02855f7d164d638",
+    "channel": 463,
+    "well": 2,
+    "read_number": 75,
+    "start_sample": 122095,
+    "offset": 4.0,
+    "scale": 0.17550019919872284,
+    "sample_rate": 4000
+  },
+  {
+    "read_id": "006d1319-2877-4b34-85df-34de7250a47b",
+    "sample_count": 337876,
+    "signal_sha256": "c592b9af16cebbca7da22d5ce96b4c568b899d345307fc60ce360bcc12a942b8",
+    "channel": 489,
+    "well": 4,
+    "read_number": 1053,
+    "start_sample": 4347870,
+    "offset": 6.0,
+    "scale": 0.17550019919872284,
+    "sample_rate": 4000
+  },
+  {
+    "read_id": "00728efb-2120-4224-87d8-580fbb0bd4b2",
+    "sample_count": 161547,
+    "signal_sha256": "565f9da906519e74f20bacee12f85ec9049140d4fd7a8814a065d388f8fc30c6",
+    "channel": 147,
+    "well": 2,
+    "read_number": 657,
+    "start_sample": 7231572,
+    "offset": 2.0,
+    "scale": 0.17550019919872284,
+    "sample_rate": 4000
+  },
+  {
+    "read_id": "007cc97e-6de2-4ff6-a0fd-1c1eca816425",
+    "sample_count": 505057,
+    "signal_sha256": "6178410a30a5b620c672a4b314221395b5921ad7f16cc40d51118629cae1cede",
+    "channel": 126,
+    "well": 2,
+    "read_number": 1625,
+    "start_sample": 7820030,
+    "offset": 23.0,
+    "scale": 0.17550019919872284,
+    "sample_rate": 4000
+  },
+  {
+    "read_id": "008468c3-e477-46c4-a6e2-7d021a4ebf0b",
+    "sample_count": 206976,
+    "signal_sha256": "d809f91c2068db82662e502d38949465a7b60a54bd0995389ba51eb027b22c74",
+    "channel": 2,
+    "well": 2,
+    "read_number": 411,
+    "start_sample": 2510647,
+    "offset": 4.0,
+    "scale": 0.17550019919872284,
+    "sample_rate": 4000
+  },
+  {
+    "read_id": "008ed3dc-86c2-452f-b107-6877a473d177",
+    "sample_count": 14510,
+    "signal_sha256": "3531cbe7216d0affc84dc5d39d298d0d34782b51d915da567eae47e5aeefb0f8",
+    "channel": 474,
+    "well": 4,
+    "read_number": 513,
+    "start_sample": 4540554,
+    "offset": 5.0,
+    "scale": 0.17550019919872284,
+    "sample_rate": 4000
+  },
+  {
+    "read_id": "00919556-e519-4960-8aa5-c2dfa020980c",
+    "sample_count": 9885,
+    "signal_sha256": "30c31bed3a900f29037f6be36b3df5a505d7667c62c76630d1afd224adfa2cbf",
+    "channel": 199,
+    "well": 4,
+    "read_number": 56,
+    "start_sample": 314914,
+    "offset": 2.0,
+    "scale": 0.17550019919872284,
+    "sample_rate": 4000
+  },
+  {
+    "read_id": "00925f34-6baf-47fc-b40c-22591e27fb5c",
+    "sample_count": 136370,
+    "signal_sha256": "c6a83f14c9ed342560952eec1a7324482b279a02c6ac9a82cf0589cc8ccc0dbb",
+    "channel": 53,
+    "well": 4,
+    "read_number": 930,
+    "start_sample": 4234717,
+    "offset": 37.0,
+    "scale": 0.17550019919872284,
+    "sample_rate": 4000
+  },
+  {
+    "read_id": "009dc9bd-c5f4-487b-ba4c-b9ce7e3a711e",
+    "sample_count": 15643,
+    "signal_sha256": "1e5b3956f98a1228836e682f6ddfc99a4493445724986d221d7335ccd7400794",
+    "channel": 452,
+    "well": 2,
+    "read_number": 195,
+    "start_sample": 1171730,
+    "offset": 14.0,
+    "scale": 0.17550019919872284,
+    "sample_rate": 4000
+  }
+]

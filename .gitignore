@@ -1,0 +1,14 @@
+/bin/
+/lib/
+/vendor/
+/.shards/
+/shard.lock
+/spec/fixtures/*.pod5
+/.pod5-install.*/
+/.agents/
+/.codex/
+/.aws/
+*.dwarf
+*.o
+*.so
+*.dylib
