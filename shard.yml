@@ -1,0 +1,13 @@
+name: pod5
+version: 0.1.0
+
+description: |
+  Crystal bindings for Oxford Nanopore POD5: lazy signal reading,
+  read selection, metadata, writing and VBZ compression. No Python runtime.
+
+crystal: ">= 1.22.0"
+license: MIT
+
+targets:
+  pod5-info:
+    main: examples/info.cr
