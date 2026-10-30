@@ -4,7 +4,10 @@ permissions:
   contents: read
 jobs:
   test:
-    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-14]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: crystal-lang/install-crystal@v1
@@ -16,6 +19,7 @@ jobs:
       - run: crystal tool format --check src spec examples scripts/*.cr
       - run: for script in scripts/*.sh; do sh -n "$script" || exit; done
       - run: ./scripts/check_abi.sh
-      - run: ./scripts/with_native.sh crystal spec
-      - run: ./scripts/with_native.sh crystal spec --release
-      - run: ./scripts/with_native.sh shards build
+      - run: crystal spec
+      - run: crystal spec --release
+      - run: shards build
+      - run: sh ./scripts/test_dependency.sh

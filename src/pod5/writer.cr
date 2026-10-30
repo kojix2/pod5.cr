@@ -27,7 +27,8 @@ module Pod5
         signal_compression_type: compression.value,
         signal_table_batch_size: signal_table_batch_size.to_u64,
         read_table_batch_size: read_table_batch_size.to_u64)
-      @handle = Pod5.check_pointer(LibPod5.create_file(@path, writer_name, pointerof(options)), "create #{@path}")
+      # The native writer needs a directory for its intermediate files.
+      @handle = Pod5.check_pointer(LibPod5.create_file(File.expand_path(@path), writer_name, pointerof(options)), "create #{@path}")
     end
 
     def self.open(path : Path | String, **options, &)

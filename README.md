@@ -6,16 +6,17 @@ Uses the official native POD5 library; no Python installation is required.
 
 ## Setup
 
-Tested with Crystal 1.22.0 and POD5 0.3.49 on Linux x86_64. Requires a C++20
-compiler, curl, tar, unzip, patch and sha256sum (or shasum). Tests also need
+Tested with Crystal 1.22.0/1.22.1 and POD5 0.3.49 on Linux x86_64 and macOS
+ARM64. Requires a C++20 compiler, curl, tar, unzip, patch and sha256sum (or shasum).
+On macOS, install the Xcode Command Line Tools (`xcode-select --install`). Tests also need
 OpenSSL headers and pkg-config for Crystal's standard SHA256 bindings.
 
 ```sh
 ./scripts/install_native.sh
 ./scripts/download_fixtures.sh
-./scripts/with_native.sh crystal spec
-./scripts/with_native.sh shards build
-./scripts/with_native.sh ./bin/pod5-info reads.pod5
+crystal spec
+shards build
+./bin/pod5-info reads.pod5
 ```
 
 The installer downloads pinned POD5 binaries/source and matching Arrow/gsl-lite
@@ -25,9 +26,10 @@ binaries are not used. External sources, headers, libraries, download caches and
 binary test fixtures are ignored by Git. Versions and checksums are in
 `scripts/common.sh`; provenance and licenses are in [THIRD_PARTY.md](THIRD_PARTY.md).
 
-The downloader recognizes Linux ARM64 and macOS 14+ ARM64 packages, but those
-platforms have not been tested. Windows is not supported by the scripts. The
-compatibility library depends on POD5's pinned C++ ABI; use version 0.3.49.
+The downloader also recognizes Linux ARM64 packages, which have not been tested.
+macOS requires version 14 or later and Apple Silicon; Intel Macs and Windows
+are not supported by the installer. The compatibility library depends on
+POD5's pinned C++ ABI; use version 0.3.49.
 
 For a local dependency in another Crystal project:
 
@@ -37,10 +39,24 @@ dependencies:
     path: /absolute/path/to/pod5.cr
 ```
 
-Run `shards install` and compile through this project's `scripts/with_native.sh`.
-It sets linker/runtime search paths. `POD5_NATIVE_PREFIX` overrides the default
-`vendor/pod5` installation prefix; `POD5_DOWNLOAD_CACHE` overrides `vendor/cache`.
-The prefix must not already exist when installing.
+Run `shards install`. Its postinstall hook downloads the pinned native inputs
+and builds the compatibility library inside the dependency. Then use
+`require "pod5"` and the usual `crystal run` or `shards build`; no wrapper,
+linker flags or runtime environment variables are needed. Installation needs
+network access unless the verified downloads are already cached or supplied offline.
+
+The binding adds its native library directory to the linker search path and
+embeds that directory as an absolute runtime search path (rpath). Built programs
+depend on that installation remaining available. When distributing a program
+to another machine, ship the native libraries and configure the executable's
+rpath for their destination.
+
+`POD5_NATIVE_PREFIX` overrides the default `vendor/pod5` installation prefix;
+use an absolute path and set it during both installation and compilation.
+`POD5_DOWNLOAD_CACHE` overrides `vendor/cache`. Re-running installation reuses
+a complete installation of the pinned version; an existing incomplete or
+incompatible prefix is refused. `scripts/with_native.sh` remains available for
+commands that explicitly need native library environment variables.
 
 For offline installation, populate the download cache or supply all three
 archives explicitly; the same checksum verification applies:

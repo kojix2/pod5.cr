@@ -1,6 +1,18 @@
 # C ABI from Oxford Nanopore POD5 0.3.49 (MPL-2.0). See THIRD_PARTY.md.
 # The high-level wrapper uses API struct version 7.
-@[Link("pod5_cr_compat")]
+{% begin %}
+  {% prefix = env("POD5_NATIVE_PREFIX") || "#{__DIR__}/../../vendor/pod5" %}
+  {% unless prefix.starts_with?("/") %}
+    {% raise "POD5_NATIVE_PREFIX must be an absolute path" %}
+  {% end %}
+  {% extension = flag?(:darwin) ? "dylib" : "so" %}
+  {% unless file_exists?("#{prefix.id}/lib/libpod5_cr_compat.#{extension.id}") %}
+    {% raise "POD5 native library missing. Run #{__DIR__}/../../scripts/install_native.sh (or reinstall the pod5 shard)." %}
+  {% end %}
+  # Quote paths for the linker shell, including spaces and single quotes.
+  {% library_path = "#{prefix.id}/lib".gsub(/'/, "'\\''") %}
+  @[Link("pod5_cr_compat", ldflags: {{ "-L'#{library_path.id}' -Xlinker -rpath -Xlinker '#{library_path.id}'" }})]
+{% end %}
 lib LibPod5
   alias ReadId = UInt8[16]
   type Reader = Void

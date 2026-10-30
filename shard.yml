@@ -8,6 +8,9 @@ description: |
 crystal: ">= 1.22.0"
 license: MIT
 
+scripts:
+  postinstall: ./scripts/install_native.sh
+
 targets:
   pod5-info:
     main: examples/info.cr
