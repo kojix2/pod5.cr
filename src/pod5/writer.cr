@@ -134,28 +134,28 @@ module Pod5
     end
 
     private def write_reads(reads) : Nil
-      read_id = reads.map { |read| read.read_id.bytes }
+      read_id = reads.map(&.read_id.bytes)
       run_info_id = reads.map { |read| run_index(read.run_info) }
       pore_type = reads.map { |read| pore_index(read.pore_type) }
-      read_number = reads.map { |read| read.read_number }
-      start_sample = reads.map { |read| read.start_sample }
-      median_before = reads.map { |read| read.median_before }
-      channel = reads.map { |read| read.channel }
-      well = reads.map { |read| read.well }
-      calibration_offset = reads.map { |read| read.calibration_offset }
-      calibration_scale = reads.map { |read| read.calibration_scale }
-      end_reason = reads.map { |read| read.end_reason.value }
+      read_number = reads.map(&.read_number)
+      start_sample = reads.map(&.start_sample)
+      median_before = reads.map(&.median_before)
+      channel = reads.map(&.channel)
+      well = reads.map(&.well)
+      calibration_offset = reads.map(&.calibration_offset)
+      calibration_scale = reads.map(&.calibration_scale)
+      end_reason = reads.map(&.end_reason.value)
       end_reason_forced = reads.map { |read| read.end_reason_forced ? 1_u8 : 0_u8 }
-      num_minknow_events = reads.map { |read| read.num_minknow_events }
-      tracked_scaling_scale = reads.map { |read| read.tracked_scaling_scale }
-      tracked_scaling_shift = reads.map { |read| read.tracked_scaling_shift }
-      predicted_scaling_scale = reads.map { |read| read.predicted_scaling_scale }
-      predicted_scaling_shift = reads.map { |read| read.predicted_scaling_shift }
-      num_reads_since_mux_change = reads.map { |read| read.num_reads_since_mux_change }
-      time_since_mux_change = reads.map { |read| read.time_since_mux_change }
-      open_pore_level = reads.map { |read| read.open_pore_level }
-      expected_open_pore_level = reads.map { |read| read.expected_open_pore_level }
-      selected_read_level = reads.map { |read| read.selected_read_level }
+      num_minknow_events = reads.map(&.num_minknow_events)
+      tracked_scaling_scale = reads.map(&.tracked_scaling_scale)
+      tracked_scaling_shift = reads.map(&.tracked_scaling_shift)
+      predicted_scaling_scale = reads.map(&.predicted_scaling_scale)
+      predicted_scaling_shift = reads.map(&.predicted_scaling_shift)
+      num_reads_since_mux_change = reads.map(&.num_reads_since_mux_change)
+      time_since_mux_change = reads.map(&.time_since_mux_change)
+      open_pore_level = reads.map(&.open_pore_level)
+      expected_open_pore_level = reads.map(&.expected_open_pore_level)
+      selected_read_level = reads.map(&.selected_read_level)
       row_data = LibPod5::ReadBatchRowInfoArrayV7.new(
         read_id: read_id.to_unsafe,
         run_info_id: run_info_id.to_unsafe,
@@ -182,7 +182,7 @@ module Pod5
       )
       dummy = 0_i16
       signals = reads.map { |read| read.signal.empty? ? pointerof(dummy) : read.signal.to_unsafe }
-      sizes = reads.map { |read| read.sample_count.to_u32 }
+      sizes = reads.map(&.sample_count.to_u32)
       Pod5.check(LibPod5.add_reads_data(@handle, reads.size.to_u32, API_VERSION,
         pointerof(row_data), signals, sizes), "write reads")
     end

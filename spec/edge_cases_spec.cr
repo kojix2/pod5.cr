@@ -16,9 +16,9 @@ describe "ownership and native compatibility edge cases" do
       run = Pod5::RunInfo.new(acquisition_id: "empty-fields", sample_rate: 4000_u16,
         context_tags: {"" => "", "日本語" => "測定"}, tracking_id: {} of String => String)
       metadata = Pod5::Metadata.new(run_info: run, channel: 1_u32)
-      Pod5::Writer.open(path) { |w| w.add(metadata, Slice[1_i16]) }
-      Pod5::Reader.open(path) do |r|
-        actual = r[metadata.read_id].run_info
+      Pod5::Writer.open(path, &.add(metadata, Slice[1_i16]))
+      Pod5::Reader.open(path) do |reader|
+        actual = reader[metadata.read_id].run_info
         actual.should eq(run)
         actual.experiment_name.should eq("")
         actual.tracking_id.should be_empty
@@ -26,8 +26,8 @@ describe "ownership and native compatibility edge cases" do
     end
     with_path do |path|
       run = Pod5::RunInfo.new(acquisition_id: "empty-maps", sample_rate: 4000_u16)
-      Pod5::Writer.open(path) { |w| w.add(Pod5::Metadata.new(run_info: run, channel: 1_u32), Slice[2_i16]) }
-      Pod5::Reader.open(path) { |r| r.run_infos.first.should eq(run) }
+      Pod5::Writer.open(path) { |writer| writer.add(Pod5::Metadata.new(run_info: run, channel: 1_u32), Slice[2_i16]) }
+      Pod5::Reader.open(path, &.run_infos.first.should(eq(run)))
     end
   end
 
@@ -35,8 +35,8 @@ describe "ownership and native compatibility edge cases" do
     with_path do |path|
       pore = "pore-" + "x" * 1024
       metadata = Pod5::Metadata.new(run_info: test_run, channel: 1_u32, pore_type: pore)
-      Pod5::Writer.open(path) { |w| w.add(metadata, Slice[100_i16]) }
-      Pod5::Reader.open(path) { |r| r[metadata.read_id].pore_type.should eq(pore) }
+      Pod5::Writer.open(path, &.add(metadata, Slice[100_i16]))
+      Pod5::Reader.open(path) { |reader| reader[metadata.read_id].pore_type.should eq(pore) }
     end
   end
 
@@ -46,29 +46,29 @@ describe "ownership and native compatibility edge cases" do
       read = Pod5::Read.new(Pod5::Metadata.new(run_info: test_run, channel: 1_u32), source)
       source[0] = 999_i16
       read.signal[0].should eq(10_i16)
-      Pod5::Writer.open(path, read_table_batch_size: 1) do |w|
+      Pod5::Writer.open(path, read_table_batch_size: 1) do |writer|
         4.times do
           GC.collect
-          w.add(read)
+          writer.add(read)
         end
       end
       records = [] of Pod5::Record
       reader = Pod5::Reader.new(path)
-      reader.each { |r| records << r }
+      reader.each { |record| records << record }
       GC.collect
-      records.each { |r| r.signal.should eq(Slice[10_i16, 11_i16]) }
+      records.each(&.signal.should(eq(Slice[10_i16, 11_i16])))
       reader.close
     end
   end
 
   it "rejects NUL metadata before writing, leaving the writer usable" do
     with_path do |path|
-      Pod5::Writer.open(path) do |w|
+      Pod5::Writer.open(path) do |writer|
         bad = Pod5::Metadata.new(run_info: test_run, channel: 1_u32, pore_type: "a\0b")
-        expect_raises(ArgumentError) { w.add(bad, Slice[1_i16]) }
-        w.add(test_read)
+        expect_raises(ArgumentError) { writer.add(bad, Slice[1_i16]) }
+        writer.add(test_read)
       end
-      Pod5::Reader.open(path) { |r| r.size.should eq(1) }
+      Pod5::Reader.open(path, &.size.should(eq(1)))
     end
   end
 end
@@ -83,19 +83,17 @@ describe "parallel writer" do
       Pod5::Writer.open(path, read_table_batch_size: 3) do |writer|
         4.times do |index|
           context.spawn do
-            begin
-              writer.add(reads[index * 5, 5])
-              errors.send(nil)
-            rescue ex
-              errors.send(ex)
-            end
+            writer.add(reads[index * 5, 5])
+            errors.send(nil)
+          rescue ex
+            errors.send(ex)
           end
         end
         4.times { errors.receive.should be_nil }
       end
       Pod5::Reader.open(path) do |reader|
         reader.size.should eq(20)
-        reads.each { |r| reader[r.read_id].signal.should eq(r.signal) }
+        reads.each { |record| reader[record.read_id].signal.should eq(record.signal) }
       end
     end
   end

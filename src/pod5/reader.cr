@@ -136,7 +136,7 @@ module Pod5
     # Deduplicates requests, then yields in storage order. With strict=true,
     # missing IDs raise before any record is yielded.
     def each_selected(ids : Enumerable(UUID | String), *, strict : Bool = true, & : Record ->) : Nil
-      requested = ids.map { |id| id.is_a?(UUID) ? id : UUID.new(id) }.uniq.to_a
+      requested = ids.map { |id| id.is_a?(UUID) ? id : UUID.new(id) }.uniq!.to_a
       counts, rows = plan(requested, strict)
       offset = 0
       counts.each_with_index do |count, batch_index|
@@ -184,12 +184,10 @@ module Pod5
     end
 
     private def copy_run(pointer : Pointer(LibPod5::RunInfoDictData)) : RunInfo
-      begin
-        id = Pod5.copy_string(pointer.value.acquisition_id)
-        @runs[id] ||= RunInfo.from_native(pointer.value)
-      ensure
-        LibPod5.free_run_info(pointer)
-      end
+      id = Pod5.copy_string(pointer.value.acquisition_id)
+      @runs[id] ||= RunInfo.from_native(pointer.value)
+    ensure
+      LibPod5.free_run_info(pointer)
     end
 
     private def run_info(batch : Pointer(LibPod5::Batch), index : Int16) : RunInfo

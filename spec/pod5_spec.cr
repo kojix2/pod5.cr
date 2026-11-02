@@ -8,14 +8,14 @@ describe Pod5 do
       reader.file_identifier.should be_a(UUID)
       reader.file_version.should_not be_empty
       records = [] of Pod5::Record
-      reader.each { |r| records << r }
+      reader.each { |record| records << record }
       records.map(&.read_id).should eq(reader.read_ids)
-      records.map(&.object_id).uniq.size.should eq(10)
+      records.map(&.object_id).uniq!.size.should eq(10)
       reader.run_infos.should_not be_empty
-      records.each do |r|
-        r.signal.size.to_u64.should eq(r.sample_count)
-        r.duration.should eq(r.sample_count.to_f64 / r.run_info.sample_rate)
-        r.signal_pa[0].should eq((r.signal[0].to_f32 + r.calibration_offset) * r.calibration_scale)
+      records.each do |record|
+        record.signal.size.to_u64.should eq(record.sample_count)
+        record.duration.should eq(record.sample_count.to_f64 / record.run_info.sample_rate)
+        record.signal_pa[0].should eq((record.signal[0].to_f32 + record.calibration_offset) * record.calibration_scale)
       end
     end
   end
@@ -23,7 +23,7 @@ describe Pod5 do
   it "reads and migrates the official v0 fixture" do
     Pod5::Reader.open(File.join(__DIR__, "fixtures", "official_v0.pod5")) do |reader|
       reader.size.should eq(10)
-      reader.each { |r| r.signal.size.to_u64.should eq(r.sample_count) }
+      reader.each { |record| record.signal.size.to_u64.should eq(record.sample_count) }
     end
   end
 
@@ -31,7 +31,7 @@ describe Pod5 do
     Pod5::Reader.open(FIXTURE, disable_mmap: true) do |reader|
       ids = reader.read_ids
       result = [] of UUID
-      reader.each_selected([ids[9], ids[0], ids[0]]) { |r| result << r.read_id }
+      reader.each_selected([ids[9], ids[0], ids[0]]) { |record| result << record.read_id }
       result.should eq([ids[0], ids[9]])
       reader[ids[0].to_s].read_id.should eq(ids[0])
       missing = UUID.random
@@ -84,27 +84,27 @@ describe Pod5 do
           reader.run_infos.size.should eq(1)
           reader.run_infos.first.should eq(run)
           records = [] of Pod5::Record
-          reader.each { |r| records << r }
-          records.each_with_index do |r, i|
+          reader.each { |record| records << record }
+          records.each_with_index do |record, i|
             original = reads[i]
-            r.read_id.should eq(original.read_id)
-            r.signal.should eq(original.signal)
-            r.channel.should eq(123456_u32)
-            r.start_sample.should eq(1000)
-            r.calibration_offset.should eq(-10_f32)
-            r.calibration_scale.should eq(0.25_f32)
-            r.end_reason.should eq(Pod5::EndReason::ApiRequest)
-            r.end_reason_forced.should be_true
-            r.num_minknow_events.should eq(56)
-            r.tracked_scaling_scale.should eq(1.1_f32)
-            r.tracked_scaling_shift.should eq(2.2_f32)
-            r.predicted_scaling_scale.should eq(3.3_f32)
-            r.predicted_scaling_shift.should eq(4.4_f32)
-            r.num_reads_since_mux_change.should eq(7)
-            r.time_since_mux_change.should eq(8.5_f32)
-            r.open_pore_level.should eq(100_f32)
-            r.expected_open_pore_level.should eq(101_f32)
-            r.selected_read_level.should eq(102_f32)
+            record.read_id.should eq(original.read_id)
+            record.signal.should eq(original.signal)
+            record.channel.should eq(123456_u32)
+            record.start_sample.should eq(1000)
+            record.calibration_offset.should eq(-10_f32)
+            record.calibration_scale.should eq(0.25_f32)
+            record.end_reason.should eq(Pod5::EndReason::ApiRequest)
+            record.end_reason_forced.should be_true
+            record.num_minknow_events.should eq(56)
+            record.tracked_scaling_scale.should eq(1.1_f32)
+            record.tracked_scaling_shift.should eq(2.2_f32)
+            record.predicted_scaling_scale.should eq(3.3_f32)
+            record.predicted_scaling_shift.should eq(4.4_f32)
+            record.num_reads_since_mux_change.should eq(7)
+            record.time_since_mux_change.should eq(8.5_f32)
+            record.open_pore_level.should eq(100_f32)
+            record.expected_open_pore_level.should eq(101_f32)
+            record.selected_read_level.should eq(102_f32)
           end
           records.first.signal.should eq(reads.first.signal)
           records.last.signal.should eq(reads.last.signal)
@@ -126,7 +126,7 @@ describe Pod5 do
     end
     with_path do |path|
       read = test_read(count: 0)
-      Pod5::Writer.open(path) { |writer| writer.add(read) }
+      Pod5::Writer.open(path, &.add(read))
       Pod5::Reader.open(path) { |reader| reader[read.read_id].signal.should be_empty }
     end
   end
@@ -135,13 +135,13 @@ describe Pod5 do
     with_path do |path|
       Pod5::Reader.open(FIXTURE) do |source|
         Pod5::Writer.open(path) do |writer|
-          source.each { |r| writer.add(r) }
+          source.each { |record| writer.add(record) }
           read = test_read
           writer.add(read.metadata, read.signal)
         end
         Pod5::Reader.open(path) do |copy|
           copy.size.should eq(11)
-          source.each { |r| copy[r.read_id].signal.should eq(r.signal) }
+          source.each { |record| copy[record.read_id].signal.should eq(record.signal) }
         end
       end
     end
@@ -151,10 +151,10 @@ describe Pod5 do
     with_path do |path|
       a = test_read(test_run("a"), number: 1_u32)
       b = test_read(test_run("b"), number: 2_u32)
-      Pod5::Writer.open(path, read_table_batch_size: 1) { |w| w.add([a, b, a]) }
+      Pod5::Writer.open(path, read_table_batch_size: 1) { |writer| writer.add([a, b, a]) }
       Pod5::Reader.open(path) do |reader|
         runs = [] of String
-        reader.each { |r| runs << r.run_info.acquisition_id }
+        reader.each { |record| runs << record.run_info.acquisition_id }
         runs.should eq(["a", "b", "a"])
       end
     end
@@ -166,9 +166,9 @@ describe Pod5 do
     tags["unicode"] = "changed"
     run.context_tags["unicode"].should eq("実験")
     with_path do |path|
-      Pod5::Writer.open(path) do |w|
-        w.add(test_read(run))
-        expect_raises(ArgumentError, /conflicting/) { w.add(test_read(test_run(sample_rate: 5000_u16))) }
+      Pod5::Writer.open(path) do |writer|
+        writer.add(test_read(run))
+        expect_raises(ArgumentError, /conflicting/) { writer.add(test_read(test_run(sample_rate: 5000_u16))) }
       end
     end
   end
@@ -181,7 +181,7 @@ describe Pod5 do
         raise "body"
       end
     end
-    reader_ref.not_nil!.closed?.should be_true
+    reader_ref.should_not(be_nil).closed?.should be_true
     with_path do |path|
       writer = Pod5::Writer.new(path)
       writer.close
@@ -213,15 +213,13 @@ describe Pod5 do
     errors = Channel(Exception?).new(4)
     4.times do |index|
       context.spawn do
-        begin
-          5.times do
-            record = reader[ids[index]]
-            record.signal.size.to_u64.should eq(record.sample_count)
-          end
-          errors.send(nil)
-        rescue ex
-          errors.send(ex)
+        5.times do
+          record = reader[ids[index]]
+          record.signal.size.to_u64.should eq(record.sample_count)
         end
+        errors.send(nil)
+      rescue ex
+        errors.send(ex)
       end
     end
     4.times { errors.receive.should be_nil }
