@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.21.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="pod5">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="pod5">
+  <title>Pod5::Metadata - pod5 main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          pod5
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="pod5/Pod5" data-name="pod5">
+      <a href="../Pod5.html">Pod5</a>
+      
+        <ul>
+  
+  <li class=" " data-id="pod5/Pod5/ClosedError" data-name="pod5::closederror">
+      <a href="../Pod5/ClosedError.html">ClosedError</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Compression" data-name="pod5::compression">
+      <a href="../Pod5/Compression.html">Compression</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/EndReason" data-name="pod5::endreason">
+      <a href="../Pod5/EndReason.html">EndReason</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Error" data-name="pod5::error">
+      <a href="../Pod5/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" current" data-id="pod5/Pod5/Metadata" data-name="pod5::metadata">
+      <a href="../Pod5/Metadata.html">Metadata</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Read" data-name="pod5::read">
+      <a href="../Pod5/Read.html">Read</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/ReadAccess" data-name="pod5::readaccess">
+      <a href="../Pod5/ReadAccess.html">ReadAccess</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Reader" data-name="pod5::reader">
+      <a href="../Pod5/Reader.html">Reader</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Record" data-name="pod5::record">
+      <a href="../Pod5/Record.html">Record</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/RunInfo" data-name="pod5::runinfo">
+      <a href="../Pod5/RunInfo.html">RunInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/VBZ" data-name="pod5::vbz">
+      <a href="../Pod5/VBZ.html">VBZ</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Writer" data-name="pod5::writer">
+      <a href="../Pod5/Writer.html">Writer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">
+    class
+  </span> Pod5::<wbr>Metadata
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Pod5/Metadata.html">Pod5::Metadata</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Owned metadata: no native pointers and no reused record storage.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L3" target="_blank">
+        pod5/metadata.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2Cread_id%3AUUID%3DUUID.random%2Crun_info%3ARunInfo%2Cpore_type%3AString%3D%22not_set%22%2Cread_number%3AUInt32%3D0_u32%2Cstart_sample%3AUInt64%3D0_u64%2Cmedian_before%3AFloat32%3DFloat32%3A%3ANAN%2Cchannel%3AUInt32%2Cwell%3AUInt8%3D1_u8%2Ccalibration_offset%3AFloat32%3D0_f32%2Ccalibration_scale%3AFloat32%3D1_f32%2Cend_reason%3AEndReason%3DEndReason%3A%3AUnknown%2Cend_reason_forced%3ABool%3Dfalse%2Cnum_minknow_events%3AUInt64%3D0_u64%2Ctracked_scaling_scale%3AFloat32%3DFloat32%3A%3ANAN%2Ctracked_scaling_shift%3AFloat32%3DFloat32%3A%3ANAN%2Cpredicted_scaling_scale%3AFloat32%3DFloat32%3A%3ANAN%2Cpredicted_scaling_shift%3AFloat32%3DFloat32%3A%3ANAN%2Cnum_reads_since_mux_change%3AUInt32%3D0_u32%2Ctime_since_mux_change%3AFloat32%3D0_f32%2Copen_pore_level%3AFloat32%3DFloat32%3A%3ANAN%2Cexpected_open_pore_level%3AFloat32%3DFloat32%3A%3ANAN%2Cselected_read_level%3AFloat32%3DFloat32%3A%3ANAN%29-class-method" class="signature"><strong>.new</strong>(*, read_id : UUID = <span class="t">UUID</span>.random, run_info : RunInfo, pore_type : String = <span class="s">&quot;not_set&quot;</span>, read_number : UInt32 = <span class="n">0_u32</span>, start_sample : UInt64 = <span class="n">0_u64</span>, median_before : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, channel : UInt32, well : UInt8 = <span class="n">1_u8</span>, calibration_offset : Float32 = <span class="n">0_f32</span>, calibration_scale : Float32 = <span class="n">1_f32</span>, end_reason : EndReason = <span class="t">EndReason</span><span class="t">::</span><span class="t">Unknown</span>, end_reason_forced : Bool = <span class="n">false</span>, num_minknow_events : UInt64 = <span class="n">0_u64</span>, tracked_scaling_scale : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, tracked_scaling_shift : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, predicted_scaling_scale : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, predicted_scaling_shift : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, num_reads_since_mux_change : UInt32 = <span class="n">0_u32</span>, time_since_mux_change : Float32 = <span class="n">0_f32</span>, open_pore_level : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, expected_open_pore_level : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, selected_read_level : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#calibration_offset%3AFloat32-instance-method" class="signature"><strong>#calibration_offset</strong> : Float32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#calibration_scale%3AFloat32-instance-method" class="signature"><strong>#calibration_scale</strong> : Float32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#channel%3AUInt32-instance-method" class="signature"><strong>#channel</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#end_reason%3AEndReason-instance-method" class="signature"><strong>#end_reason</strong> : EndReason</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#end_reason_forced%3ABool-instance-method" class="signature"><strong>#end_reason_forced</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#expected_open_pore_level%3AFloat32-instance-method" class="signature"><strong>#expected_open_pore_level</strong> : Float32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#median_before%3AFloat32-instance-method" class="signature"><strong>#median_before</strong> : Float32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#num_minknow_events%3AUInt64-instance-method" class="signature"><strong>#num_minknow_events</strong> : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#num_reads_since_mux_change%3AUInt32-instance-method" class="signature"><strong>#num_reads_since_mux_change</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#open_pore_level%3AFloat32-instance-method" class="signature"><strong>#open_pore_level</strong> : Float32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pore_type%3AString-instance-method" class="signature"><strong>#pore_type</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#predicted_scaling_scale%3AFloat32-instance-method" class="signature"><strong>#predicted_scaling_scale</strong> : Float32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#predicted_scaling_shift%3AFloat32-instance-method" class="signature"><strong>#predicted_scaling_shift</strong> : Float32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#read_id%3AUUID-instance-method" class="signature"><strong>#read_id</strong> : UUID</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#read_number%3AUInt32-instance-method" class="signature"><strong>#read_number</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#run_info%3ARunInfo-instance-method" class="signature"><strong>#run_info</strong> : RunInfo</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#selected_read_level%3AFloat32-instance-method" class="signature"><strong>#selected_read_level</strong> : Float32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#start_sample%3AUInt64-instance-method" class="signature"><strong>#start_sample</strong> : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_since_mux_change%3AFloat32-instance-method" class="signature"><strong>#time_since_mux_change</strong> : Float32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tracked_scaling_scale%3AFloat32-instance-method" class="signature"><strong>#tracked_scaling_scale</strong> : Float32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tracked_scaling_shift%3AFloat32-instance-method" class="signature"><strong>#tracked_scaling_shift</strong> : Float32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#well%3AUInt8-instance-method" class="signature"><strong>#well</strong> : UInt8</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <div class="methods-inherited">
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
+
+  
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(*,read_id:UUID=UUID.random,run_info:RunInfo,pore_type:String=&quot;not_set&quot;,read_number:UInt32=0_u32,start_sample:UInt64=0_u64,median_before:Float32=Float32::NAN,channel:UInt32,well:UInt8=1_u8,calibration_offset:Float32=0_f32,calibration_scale:Float32=1_f32,end_reason:EndReason=EndReason::Unknown,end_reason_forced:Bool=false,num_minknow_events:UInt64=0_u64,tracked_scaling_scale:Float32=Float32::NAN,tracked_scaling_shift:Float32=Float32::NAN,predicted_scaling_scale:Float32=Float32::NAN,predicted_scaling_shift:Float32=Float32::NAN,num_reads_since_mux_change:UInt32=0_u32,time_since_mux_change:Float32=0_f32,open_pore_level:Float32=Float32::NAN,expected_open_pore_level:Float32=Float32::NAN,selected_read_level:Float32=Float32::NAN)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(*, read_id : UUID = <span class="t">UUID</span>.random, run_info : <a href="../Pod5/RunInfo.html">RunInfo</a>, pore_type : String = <span class="s">&quot;not_set&quot;</span>, read_number : UInt32 = <span class="n">0_u32</span>, start_sample : UInt64 = <span class="n">0_u64</span>, median_before : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, channel : UInt32, well : UInt8 = <span class="n">1_u8</span>, calibration_offset : Float32 = <span class="n">0_f32</span>, calibration_scale : Float32 = <span class="n">1_f32</span>, end_reason : <a href="../Pod5/EndReason.html">EndReason</a> = <span class="t">EndReason</span><span class="t">::</span><span class="t">Unknown</span>, end_reason_forced : Bool = <span class="n">false</span>, num_minknow_events : UInt64 = <span class="n">0_u64</span>, tracked_scaling_scale : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, tracked_scaling_shift : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, predicted_scaling_scale : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, predicted_scaling_shift : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, num_reads_since_mux_change : UInt32 = <span class="n">0_u32</span>, time_since_mux_change : Float32 = <span class="n">0_f32</span>, open_pore_level : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, expected_open_pore_level : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>, selected_read_level : Float32 = <span class="t">Float32</span><span class="t">::</span><span class="t">NAN</span>)
+
+        <a class="method-permalink" href="#new%28%2A%2Cread_id%3AUUID%3DUUID.random%2Crun_info%3ARunInfo%2Cpore_type%3AString%3D%22not_set%22%2Cread_number%3AUInt32%3D0_u32%2Cstart_sample%3AUInt64%3D0_u64%2Cmedian_before%3AFloat32%3DFloat32%3A%3ANAN%2Cchannel%3AUInt32%2Cwell%3AUInt8%3D1_u8%2Ccalibration_offset%3AFloat32%3D0_f32%2Ccalibration_scale%3AFloat32%3D1_f32%2Cend_reason%3AEndReason%3DEndReason%3A%3AUnknown%2Cend_reason_forced%3ABool%3Dfalse%2Cnum_minknow_events%3AUInt64%3D0_u64%2Ctracked_scaling_scale%3AFloat32%3DFloat32%3A%3ANAN%2Ctracked_scaling_shift%3AFloat32%3DFloat32%3A%3ANAN%2Cpredicted_scaling_scale%3AFloat32%3DFloat32%3A%3ANAN%2Cpredicted_scaling_shift%3AFloat32%3DFloat32%3A%3ANAN%2Cnum_reads_since_mux_change%3AUInt32%3D0_u32%2Ctime_since_mux_change%3AFloat32%3D0_f32%2Copen_pore_level%3AFloat32%3DFloat32%3A%3ANAN%2Cexpected_open_pore_level%3AFloat32%3DFloat32%3A%3ANAN%2Cselected_read_level%3AFloat32%3DFloat32%3A%3ANAN%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="calibration_offset:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>calibration_offset</strong> : Float32
+
+        <a class="method-permalink" href="#calibration_offset%3AFloat32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="calibration_scale:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>calibration_scale</strong> : Float32
+
+        <a class="method-permalink" href="#calibration_scale%3AFloat32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="channel:UInt32-instance-method">
+      <div class="signature">
+        
+        def <strong>channel</strong> : UInt32
+
+        <a class="method-permalink" href="#channel%3AUInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="end_reason:EndReason-instance-method">
+      <div class="signature">
+        
+        def <strong>end_reason</strong> : <a href="../Pod5/EndReason.html">EndReason</a>
+
+        <a class="method-permalink" href="#end_reason%3AEndReason-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="end_reason_forced:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>end_reason_forced</strong> : Bool
+
+        <a class="method-permalink" href="#end_reason_forced%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="expected_open_pore_level:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>expected_open_pore_level</strong> : Float32
+
+        <a class="method-permalink" href="#expected_open_pore_level%3AFloat32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L24" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="median_before:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>median_before</strong> : Float32
+
+        <a class="method-permalink" href="#median_before%3AFloat32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="num_minknow_events:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>num_minknow_events</strong> : UInt64
+
+        <a class="method-permalink" href="#num_minknow_events%3AUInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="num_reads_since_mux_change:UInt32-instance-method">
+      <div class="signature">
+        
+        def <strong>num_reads_since_mux_change</strong> : UInt32
+
+        <a class="method-permalink" href="#num_reads_since_mux_change%3AUInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="open_pore_level:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>open_pore_level</strong> : Float32
+
+        <a class="method-permalink" href="#open_pore_level%3AFloat32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pore_type:String-instance-method">
+      <div class="signature">
+        
+        def <strong>pore_type</strong> : String
+
+        <a class="method-permalink" href="#pore_type%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="predicted_scaling_scale:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>predicted_scaling_scale</strong> : Float32
+
+        <a class="method-permalink" href="#predicted_scaling_scale%3AFloat32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="predicted_scaling_shift:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>predicted_scaling_shift</strong> : Float32
+
+        <a class="method-permalink" href="#predicted_scaling_shift%3AFloat32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="read_id:UUID-instance-method">
+      <div class="signature">
+        
+        def <strong>read_id</strong> : UUID
+
+        <a class="method-permalink" href="#read_id%3AUUID-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="read_number:UInt32-instance-method">
+      <div class="signature">
+        
+        def <strong>read_number</strong> : UInt32
+
+        <a class="method-permalink" href="#read_number%3AUInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="run_info:RunInfo-instance-method">
+      <div class="signature">
+        
+        def <strong>run_info</strong> : <a href="../Pod5/RunInfo.html">RunInfo</a>
+
+        <a class="method-permalink" href="#run_info%3ARunInfo-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="selected_read_level:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>selected_read_level</strong> : Float32
+
+        <a class="method-permalink" href="#selected_read_level%3AFloat32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="start_sample:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>start_sample</strong> : UInt64
+
+        <a class="method-permalink" href="#start_sample%3AUInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_since_mux_change:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>time_since_mux_change</strong> : Float32
+
+        <a class="method-permalink" href="#time_since_mux_change%3AFloat32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tracked_scaling_scale:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>tracked_scaling_scale</strong> : Float32
+
+        <a class="method-permalink" href="#tracked_scaling_scale%3AFloat32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tracked_scaling_shift:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>tracked_scaling_shift</strong> : Float32
+
+        <a class="method-permalink" href="#tracked_scaling_shift%3AFloat32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="well:UInt8-instance-method">
+      <div class="signature">
+        
+        def <strong>well</strong> : UInt8
+
+        <a class="method-permalink" href="#well%3AUInt8-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+</div>
+
+</body>
+</html>

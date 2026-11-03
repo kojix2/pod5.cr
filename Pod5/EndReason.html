@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.21.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="pod5">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="pod5">
+  <title>Pod5::EndReason - pod5 main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          pod5
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="pod5/Pod5" data-name="pod5">
+      <a href="../Pod5.html">Pod5</a>
+      
+        <ul>
+  
+  <li class=" " data-id="pod5/Pod5/ClosedError" data-name="pod5::closederror">
+      <a href="../Pod5/ClosedError.html">ClosedError</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Compression" data-name="pod5::compression">
+      <a href="../Pod5/Compression.html">Compression</a>
+      
+    </li>
+  
+  <li class=" current" data-id="pod5/Pod5/EndReason" data-name="pod5::endreason">
+      <a href="../Pod5/EndReason.html">EndReason</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Error" data-name="pod5::error">
+      <a href="../Pod5/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Metadata" data-name="pod5::metadata">
+      <a href="../Pod5/Metadata.html">Metadata</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Read" data-name="pod5::read">
+      <a href="../Pod5/Read.html">Read</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/ReadAccess" data-name="pod5::readaccess">
+      <a href="../Pod5/ReadAccess.html">ReadAccess</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Reader" data-name="pod5::reader">
+      <a href="../Pod5/Reader.html">Reader</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Record" data-name="pod5::record">
+      <a href="../Pod5/Record.html">Record</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/RunInfo" data-name="pod5::runinfo">
+      <a href="../Pod5/RunInfo.html">RunInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/VBZ" data-name="pod5::vbz">
+      <a href="../Pod5/VBZ.html">VBZ</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Writer" data-name="pod5::writer">
+      <a href="../Pod5/Writer.html">Writer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">
+    enum
+  </span> Pod5::<wbr>EndReason
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/core.cr#L6" target="_blank">
+        pod5/core.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="enum-members" class="anchor" href="#enum-members">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Enum Members
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="Unknown">
+        <strong>Unknown</strong> = <code><span class="n">0</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MuxChange">
+        <strong>MuxChange</strong> = <code><span class="n">1</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="UnblockMuxChange">
+        <strong>UnblockMuxChange</strong> = <code><span class="n">2</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DataServiceUnblockMuxChange">
+        <strong>DataServiceUnblockMuxChange</strong> = <code><span class="n">3</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SignalPositive">
+        <strong>SignalPositive</strong> = <code><span class="n">4</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SignalNegative">
+        <strong>SignalNegative</strong> = <code><span class="n">5</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ApiRequest">
+        <strong>ApiRequest</strong> = <code><span class="n">6</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DeviceDataError">
+        <strong>DeviceDataError</strong> = <code><span class="n">7</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AnalysisConfigChange">
+        <strong>AnalysisConfigChange</strong> = <code><span class="n">8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="Paused">
+        <strong>Paused</strong> = <code><span class="n">9</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#analysis_config_change%3F-instance-method" class="signature"><strong>#analysis_config_change?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#AnalysisConfigChange">AnalysisConfigChange</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#api_request%3F-instance-method" class="signature"><strong>#api_request?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#ApiRequest">ApiRequest</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#data_service_unblock_mux_change%3F-instance-method" class="signature"><strong>#data_service_unblock_mux_change?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#DataServiceUnblockMuxChange">DataServiceUnblockMuxChange</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#device_data_error%3F-instance-method" class="signature"><strong>#device_data_error?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#DeviceDataError">DeviceDataError</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mux_change%3F-instance-method" class="signature"><strong>#mux_change?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#MuxChange">MuxChange</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#paused%3F-instance-method" class="signature"><strong>#paused?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#Paused">Paused</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#signal_negative%3F-instance-method" class="signature"><strong>#signal_negative?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#SignalNegative">SignalNegative</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#signal_positive%3F-instance-method" class="signature"><strong>#signal_positive?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#SignalPositive">SignalPositive</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unblock_mux_change%3F-instance-method" class="signature"><strong>#unblock_mux_change?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#UnblockMuxChange">UnblockMuxChange</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unknown%3F-instance-method" class="signature"><strong>#unknown?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#Unknown">Unknown</a></code></p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <div class="methods-inherited">
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
+
+  
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="analysis_config_change?-instance-method">
+      <div class="signature">
+        
+        def <strong>analysis_config_change?</strong>
+
+        <a class="method-permalink" href="#analysis_config_change%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#AnalysisConfigChange">AnalysisConfigChange</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/core.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="api_request?-instance-method">
+      <div class="signature">
+        
+        def <strong>api_request?</strong>
+
+        <a class="method-permalink" href="#api_request%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#ApiRequest">ApiRequest</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/core.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="data_service_unblock_mux_change?-instance-method">
+      <div class="signature">
+        
+        def <strong>data_service_unblock_mux_change?</strong>
+
+        <a class="method-permalink" href="#data_service_unblock_mux_change%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#DataServiceUnblockMuxChange">DataServiceUnblockMuxChange</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/core.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="device_data_error?-instance-method">
+      <div class="signature">
+        
+        def <strong>device_data_error?</strong>
+
+        <a class="method-permalink" href="#device_data_error%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#DeviceDataError">DeviceDataError</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/core.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mux_change?-instance-method">
+      <div class="signature">
+        
+        def <strong>mux_change?</strong>
+
+        <a class="method-permalink" href="#mux_change%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#MuxChange">MuxChange</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/core.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="paused?-instance-method">
+      <div class="signature">
+        
+        def <strong>paused?</strong>
+
+        <a class="method-permalink" href="#paused%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#Paused">Paused</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/core.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="signal_negative?-instance-method">
+      <div class="signature">
+        
+        def <strong>signal_negative?</strong>
+
+        <a class="method-permalink" href="#signal_negative%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#SignalNegative">SignalNegative</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/core.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="signal_positive?-instance-method">
+      <div class="signature">
+        
+        def <strong>signal_positive?</strong>
+
+        <a class="method-permalink" href="#signal_positive%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#SignalPositive">SignalPositive</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/core.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unblock_mux_change?-instance-method">
+      <div class="signature">
+        
+        def <strong>unblock_mux_change?</strong>
+
+        <a class="method-permalink" href="#unblock_mux_change%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#UnblockMuxChange">UnblockMuxChange</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/core.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unknown?-instance-method">
+      <div class="signature">
+        
+        def <strong>unknown?</strong>
+
+        <a class="method-permalink" href="#unknown%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value equals <code><a href="../Pod5/EndReason.html#Unknown">Unknown</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/core.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+</div>
+
+</body>
+</html>

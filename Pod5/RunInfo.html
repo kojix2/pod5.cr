@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.21.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="pod5">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="pod5">
+  <title>Pod5::RunInfo - pod5 main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          pod5
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="pod5/Pod5" data-name="pod5">
+      <a href="../Pod5.html">Pod5</a>
+      
+        <ul>
+  
+  <li class=" " data-id="pod5/Pod5/ClosedError" data-name="pod5::closederror">
+      <a href="../Pod5/ClosedError.html">ClosedError</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Compression" data-name="pod5::compression">
+      <a href="../Pod5/Compression.html">Compression</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/EndReason" data-name="pod5::endreason">
+      <a href="../Pod5/EndReason.html">EndReason</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Error" data-name="pod5::error">
+      <a href="../Pod5/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Metadata" data-name="pod5::metadata">
+      <a href="../Pod5/Metadata.html">Metadata</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Read" data-name="pod5::read">
+      <a href="../Pod5/Read.html">Read</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/ReadAccess" data-name="pod5::readaccess">
+      <a href="../Pod5/ReadAccess.html">ReadAccess</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Reader" data-name="pod5::reader">
+      <a href="../Pod5/Reader.html">Reader</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Record" data-name="pod5::record">
+      <a href="../Pod5/Record.html">Record</a>
+      
+    </li>
+  
+  <li class=" current" data-id="pod5/Pod5/RunInfo" data-name="pod5::runinfo">
+      <a href="../Pod5/RunInfo.html">RunInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/VBZ" data-name="pod5::vbz">
+      <a href="../Pod5/VBZ.html">VBZ</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Writer" data-name="pod5::writer">
+      <a href="../Pod5/Writer.html">Writer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">
+    class
+  </span> Pod5::<wbr>RunInfo
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Pod5/RunInfo.html">Pod5::RunInfo</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L2" target="_blank">
+        pod5/run_info.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2Cacquisition_id%3AString%2Cacquisition_start_time_ms%3AInt64%3D0_i64%2Cadc_max%3AInt16%3D4095_i16%2Cadc_min%3AInt16%3D-4096_i16%2Ccontext_tags%3AHash%28String%2CString%29%3D%7B%7DofString%3D%3EString%2Cexperiment_name%3AString%3D%22%22%2Cflow_cell_id%3AString%3D%22%22%2Cflow_cell_product_code%3AString%3D%22%22%2Cprotocol_name%3AString%3D%22%22%2Cprotocol_run_id%3AString%3D%22%22%2Cprotocol_start_time_ms%3AInt64%3D0_i64%2Csample_id%3AString%3D%22%22%2Csample_rate%3AUInt16%2Csequencing_kit%3AString%3D%22%22%2Csequencer_position%3AString%3D%22%22%2Csequencer_position_type%3AString%3D%22%22%2Csoftware%3AString%3D%22%22%2Csystem_name%3AString%3D%22%22%2Csystem_type%3AString%3D%22%22%2Ctracking_id%3AHash%28String%2CString%29%3D%7B%7DofString%3D%3EString%29-class-method" class="signature"><strong>.new</strong>(*, acquisition_id : String, acquisition_start_time_ms : Int64 = <span class="n">0_i64</span>, adc_max : Int16 = <span class="n">4095_i16</span>, adc_min : Int16 = <span class="n">-4096_i16</span>, context_tags : Hash(String, String) = {} <span class="k">of</span> <span class="t">String</span> <span class="o">=&gt;</span> <span class="t">String</span>, experiment_name : String = <span class="s">&quot;&quot;</span>, flow_cell_id : String = <span class="s">&quot;&quot;</span>, flow_cell_product_code : String = <span class="s">&quot;&quot;</span>, protocol_name : String = <span class="s">&quot;&quot;</span>, protocol_run_id : String = <span class="s">&quot;&quot;</span>, protocol_start_time_ms : Int64 = <span class="n">0_i64</span>, sample_id : String = <span class="s">&quot;&quot;</span>, sample_rate : UInt16, sequencing_kit : String = <span class="s">&quot;&quot;</span>, sequencer_position : String = <span class="s">&quot;&quot;</span>, sequencer_position_type : String = <span class="s">&quot;&quot;</span>, software : String = <span class="s">&quot;&quot;</span>, system_name : String = <span class="s">&quot;&quot;</span>, system_type : String = <span class="s">&quot;&quot;</span>, tracking_id : Hash(String, String) = {} <span class="k">of</span> <span class="t">String</span> <span class="o">=&gt;</span> <span class="t">String</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%3D%3D%28other%3Aself%29-instance-method" class="signature"><strong>#==</strong>(other : <span class="k">self</span>)</a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this reference is the same as <em>other</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#acquisition_id%3AString-instance-method" class="signature"><strong>#acquisition_id</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#acquisition_start_time_ms%3AInt64-instance-method" class="signature"><strong>#acquisition_start_time_ms</strong> : Int64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#adc_max%3AInt16-instance-method" class="signature"><strong>#adc_max</strong> : Int16</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#adc_min%3AInt16-instance-method" class="signature"><strong>#adc_min</strong> : Int16</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#context_tags%3AHash%28String%2CString%29-instance-method" class="signature"><strong>#context_tags</strong> : Hash(String, String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#experiment_name%3AString-instance-method" class="signature"><strong>#experiment_name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#flow_cell_id%3AString-instance-method" class="signature"><strong>#flow_cell_id</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#flow_cell_product_code%3AString-instance-method" class="signature"><strong>#flow_cell_product_code</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hash%28hasher%29-instance-method" class="signature"><strong>#hash</strong>(hasher)</a>
+        
+          <div class="summary"><p>See <code>Object#hash(hasher)</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#protocol_name%3AString-instance-method" class="signature"><strong>#protocol_name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#protocol_run_id%3AString-instance-method" class="signature"><strong>#protocol_run_id</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#protocol_start_time_ms%3AInt64-instance-method" class="signature"><strong>#protocol_start_time_ms</strong> : Int64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sample_id%3AString-instance-method" class="signature"><strong>#sample_id</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sample_rate%3AUInt16-instance-method" class="signature"><strong>#sample_rate</strong> : UInt16</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sequencer_position%3AString-instance-method" class="signature"><strong>#sequencer_position</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sequencer_position_type%3AString-instance-method" class="signature"><strong>#sequencer_position_type</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sequencing_kit%3AString-instance-method" class="signature"><strong>#sequencing_kit</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#software%3AString-instance-method" class="signature"><strong>#software</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#system_name%3AString-instance-method" class="signature"><strong>#system_name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#system_type%3AString-instance-method" class="signature"><strong>#system_type</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tracking_id%3AHash%28String%2CString%29-instance-method" class="signature"><strong>#tracking_id</strong> : Hash(String, String)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <div class="methods-inherited">
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
+
+  
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(*,acquisition_id:String,acquisition_start_time_ms:Int64=0_i64,adc_max:Int16=4095_i16,adc_min:Int16=-4096_i16,context_tags:Hash(String,String)={}ofString=&gt;String,experiment_name:String=&quot;&quot;,flow_cell_id:String=&quot;&quot;,flow_cell_product_code:String=&quot;&quot;,protocol_name:String=&quot;&quot;,protocol_run_id:String=&quot;&quot;,protocol_start_time_ms:Int64=0_i64,sample_id:String=&quot;&quot;,sample_rate:UInt16,sequencing_kit:String=&quot;&quot;,sequencer_position:String=&quot;&quot;,sequencer_position_type:String=&quot;&quot;,software:String=&quot;&quot;,system_name:String=&quot;&quot;,system_type:String=&quot;&quot;,tracking_id:Hash(String,String)={}ofString=&gt;String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(*, acquisition_id : String, acquisition_start_time_ms : Int64 = <span class="n">0_i64</span>, adc_max : Int16 = <span class="n">4095_i16</span>, adc_min : Int16 = <span class="n">-4096_i16</span>, context_tags : Hash(String, String) = {} <span class="k">of</span> <span class="t">String</span> <span class="o">=&gt;</span> <span class="t">String</span>, experiment_name : String = <span class="s">&quot;&quot;</span>, flow_cell_id : String = <span class="s">&quot;&quot;</span>, flow_cell_product_code : String = <span class="s">&quot;&quot;</span>, protocol_name : String = <span class="s">&quot;&quot;</span>, protocol_run_id : String = <span class="s">&quot;&quot;</span>, protocol_start_time_ms : Int64 = <span class="n">0_i64</span>, sample_id : String = <span class="s">&quot;&quot;</span>, sample_rate : UInt16, sequencing_kit : String = <span class="s">&quot;&quot;</span>, sequencer_position : String = <span class="s">&quot;&quot;</span>, sequencer_position_type : String = <span class="s">&quot;&quot;</span>, software : String = <span class="s">&quot;&quot;</span>, system_name : String = <span class="s">&quot;&quot;</span>, system_type : String = <span class="s">&quot;&quot;</span>, tracking_id : Hash(String, String) = {} <span class="k">of</span> <span class="t">String</span> <span class="o">=&gt;</span> <span class="t">String</span>)
+
+        <a class="method-permalink" href="#new%28%2A%2Cacquisition_id%3AString%2Cacquisition_start_time_ms%3AInt64%3D0_i64%2Cadc_max%3AInt16%3D4095_i16%2Cadc_min%3AInt16%3D-4096_i16%2Ccontext_tags%3AHash%28String%2CString%29%3D%7B%7DofString%3D%3EString%2Cexperiment_name%3AString%3D%22%22%2Cflow_cell_id%3AString%3D%22%22%2Cflow_cell_product_code%3AString%3D%22%22%2Cprotocol_name%3AString%3D%22%22%2Cprotocol_run_id%3AString%3D%22%22%2Cprotocol_start_time_ms%3AInt64%3D0_i64%2Csample_id%3AString%3D%22%22%2Csample_rate%3AUInt16%2Csequencing_kit%3AString%3D%22%22%2Csequencer_position%3AString%3D%22%22%2Csequencer_position_type%3AString%3D%22%22%2Csoftware%3AString%3D%22%22%2Csystem_name%3AString%3D%22%22%2Csystem_type%3AString%3D%22%22%2Ctracking_id%3AHash%28String%2CString%29%3D%7B%7DofString%3D%3EString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="==(other:self)-instance-method">
+      <div class="signature">
+        
+        def <strong>==</strong>(other : <span class="k">self</span>)
+
+        <a class="method-permalink" href="#%3D%3D%28other%3Aself%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class Reference
+            </div>
+          
+          <p>Returns <code>true</code> if this reference is the same as <em>other</em>. Invokes <code>same?</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="acquisition_id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>acquisition_id</strong> : String
+
+        <a class="method-permalink" href="#acquisition_id%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="acquisition_start_time_ms:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>acquisition_start_time_ms</strong> : Int64
+
+        <a class="method-permalink" href="#acquisition_start_time_ms%3AInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="adc_max:Int16-instance-method">
+      <div class="signature">
+        
+        def <strong>adc_max</strong> : Int16
+
+        <a class="method-permalink" href="#adc_max%3AInt16-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="adc_min:Int16-instance-method">
+      <div class="signature">
+        
+        def <strong>adc_min</strong> : Int16
+
+        <a class="method-permalink" href="#adc_min%3AInt16-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="context_tags:Hash(String,String)-instance-method">
+      <div class="signature">
+        
+        def <strong>context_tags</strong> : Hash(String, String)
+
+        <a class="method-permalink" href="#context_tags%3AHash%28String%2CString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L51" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="experiment_name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>experiment_name</strong> : String
+
+        <a class="method-permalink" href="#experiment_name%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="flow_cell_id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>flow_cell_id</strong> : String
+
+        <a class="method-permalink" href="#flow_cell_id%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="flow_cell_product_code:String-instance-method">
+      <div class="signature">
+        
+        def <strong>flow_cell_product_code</strong> : String
+
+        <a class="method-permalink" href="#flow_cell_product_code%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hash(hasher)-instance-method">
+      <div class="signature">
+        
+        def <strong>hash</strong>(hasher)
+
+        <a class="method-permalink" href="#hash%28hasher%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class Reference
+            </div>
+          
+          <p>See <code>Object#hash(hasher)</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="protocol_name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>protocol_name</strong> : String
+
+        <a class="method-permalink" href="#protocol_name%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="protocol_run_id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>protocol_run_id</strong> : String
+
+        <a class="method-permalink" href="#protocol_run_id%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="protocol_start_time_ms:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>protocol_start_time_ms</strong> : Int64
+
+        <a class="method-permalink" href="#protocol_start_time_ms%3AInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sample_id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>sample_id</strong> : String
+
+        <a class="method-permalink" href="#sample_id%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sample_rate:UInt16-instance-method">
+      <div class="signature">
+        
+        def <strong>sample_rate</strong> : UInt16
+
+        <a class="method-permalink" href="#sample_rate%3AUInt16-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sequencer_position:String-instance-method">
+      <div class="signature">
+        
+        def <strong>sequencer_position</strong> : String
+
+        <a class="method-permalink" href="#sequencer_position%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sequencer_position_type:String-instance-method">
+      <div class="signature">
+        
+        def <strong>sequencer_position_type</strong> : String
+
+        <a class="method-permalink" href="#sequencer_position_type%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sequencing_kit:String-instance-method">
+      <div class="signature">
+        
+        def <strong>sequencing_kit</strong> : String
+
+        <a class="method-permalink" href="#sequencing_kit%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="software:String-instance-method">
+      <div class="signature">
+        
+        def <strong>software</strong> : String
+
+        <a class="method-permalink" href="#software%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="system_name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>system_name</strong> : String
+
+        <a class="method-permalink" href="#system_name%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="system_type:String-instance-method">
+      <div class="signature">
+        
+        def <strong>system_type</strong> : String
+
+        <a class="method-permalink" href="#system_type%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tracking_id:Hash(String,String)-instance-method">
+      <div class="signature">
+        
+        def <strong>tracking_id</strong> : Hash(String, String)
+
+        <a class="method-permalink" href="#tracking_id%3AHash%28String%2CString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/run_info.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+</div>
+
+</body>
+</html>

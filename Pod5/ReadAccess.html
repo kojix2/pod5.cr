@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.21.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="pod5">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="pod5">
+  <title>Pod5::ReadAccess - pod5 main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          pod5
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="pod5/Pod5" data-name="pod5">
+      <a href="../Pod5.html">Pod5</a>
+      
+        <ul>
+  
+  <li class=" " data-id="pod5/Pod5/ClosedError" data-name="pod5::closederror">
+      <a href="../Pod5/ClosedError.html">ClosedError</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Compression" data-name="pod5::compression">
+      <a href="../Pod5/Compression.html">Compression</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/EndReason" data-name="pod5::endreason">
+      <a href="../Pod5/EndReason.html">EndReason</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Error" data-name="pod5::error">
+      <a href="../Pod5/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Metadata" data-name="pod5::metadata">
+      <a href="../Pod5/Metadata.html">Metadata</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Read" data-name="pod5::read">
+      <a href="../Pod5/Read.html">Read</a>
+      
+    </li>
+  
+  <li class=" current" data-id="pod5/Pod5/ReadAccess" data-name="pod5::readaccess">
+      <a href="../Pod5/ReadAccess.html">ReadAccess</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Reader" data-name="pod5::reader">
+      <a href="../Pod5/Reader.html">Reader</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Record" data-name="pod5::record">
+      <a href="../Pod5/Record.html">Record</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/RunInfo" data-name="pod5::runinfo">
+      <a href="../Pod5/RunInfo.html">RunInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/VBZ" data-name="pod5::vbz">
+      <a href="../Pod5/VBZ.html">VBZ</a>
+      
+    </li>
+  
+  <li class=" " data-id="pod5/Pod5/Writer" data-name="pod5::writer">
+      <a href="../Pod5/Writer.html">Writer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">
+    module
+  </span> Pod5::<wbr>ReadAccess
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="direct-including-types" class="anchor" href="#direct-including-types">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Direct including types
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../Pod5/Read.html">Pod5::Read</a></li>
+    
+      <li class="other-type"><a href="../Pod5/Record.html">Pod5::Record</a></li>
+    
+  </ul>
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L60" target="_blank">
+        pod5/metadata.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#calibration_offset%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#calibration_offset</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#calibration_offset%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#calibration_offset</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#calibration_scale%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#calibration_scale</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#calibration_scale%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#calibration_scale</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#channel%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#channel</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#channel%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#channel</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#duration%3AFloat64-instance-method" class="signature"><strong>#duration</strong> : Float64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#end_reason%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#end_reason</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#end_reason%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#end_reason</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#end_reason_forced%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#end_reason_forced</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#end_reason_forced%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#end_reason_forced</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#expected_open_pore_level%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#expected_open_pore_level</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#expected_open_pore_level%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#expected_open_pore_level</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#median_before%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#median_before</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#median_before%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#median_before</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#metadata%3AMetadata-instance-method" class="signature"><strong>#metadata</strong> : Metadata</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#num_minknow_events%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#num_minknow_events</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#num_minknow_events%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#num_minknow_events</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#num_reads_since_mux_change%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#num_reads_since_mux_change</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#num_reads_since_mux_change%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#num_reads_since_mux_change</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#open_pore_level%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#open_pore_level</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#open_pore_level%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#open_pore_level</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pore_type%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#pore_type</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pore_type%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#pore_type</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#predicted_scaling_scale%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#predicted_scaling_scale</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#predicted_scaling_scale%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#predicted_scaling_scale</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#predicted_scaling_shift%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#predicted_scaling_shift</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#predicted_scaling_shift%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#predicted_scaling_shift</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#read_id%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#read_id</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#read_id%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#read_id</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#read_number%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#read_number</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#read_number%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#read_number</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#run_info%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#run_info</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#run_info%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#run_info</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sample_count%3AUInt64-instance-method" class="signature"><strong>#sample_count</strong> : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#selected_read_level%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#selected_read_level</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#selected_read_level%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#selected_read_level</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#signal%3ASlice%28Int16%29-instance-method" class="signature"><strong>#signal</strong> : Slice(Int16)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#signal_pa%3ASlice%28Float32%29-instance-method" class="signature"><strong>#signal_pa</strong> : Slice(Float32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#start_sample%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#start_sample</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#start_sample%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#start_sample</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#start_time%3AFloat64-instance-method" class="signature"><strong>#start_time</strong> : Float64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_since_mux_change%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#time_since_mux_change</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_since_mux_change%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#time_since_mux_change</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tracked_scaling_scale%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#tracked_scaling_scale</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tracked_scaling_scale%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#tracked_scaling_scale</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tracked_scaling_shift%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#tracked_scaling_shift</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tracked_scaling_shift%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#tracked_scaling_shift</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#well%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#well</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#well%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#well</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <div class="methods-inherited">
+    
+  </div>
+
+  
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="calibration_offset(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>calibration_offset</strong>(*args, **options)
+
+        <a class="method-permalink" href="#calibration_offset%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L73" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="calibration_offset(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>calibration_offset</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#calibration_offset%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L73" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="calibration_scale(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>calibration_scale</strong>(*args, **options)
+
+        <a class="method-permalink" href="#calibration_scale%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L74" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="calibration_scale(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>calibration_scale</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#calibration_scale%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L74" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="channel(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>channel</strong>(*args, **options)
+
+        <a class="method-permalink" href="#channel%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L71" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="channel(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>channel</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#channel%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L71" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="duration:Float64-instance-method">
+      <div class="signature">
+        
+        def <strong>duration</strong> : Float64
+
+        <a class="method-permalink" href="#duration%3AFloat64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L88" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="end_reason(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>end_reason</strong>(*args, **options)
+
+        <a class="method-permalink" href="#end_reason%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L75" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="end_reason(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>end_reason</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#end_reason%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L75" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="end_reason_forced(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>end_reason_forced</strong>(*args, **options)
+
+        <a class="method-permalink" href="#end_reason_forced%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L76" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="end_reason_forced(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>end_reason_forced</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#end_reason_forced%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L76" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="expected_open_pore_level(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>expected_open_pore_level</strong>(*args, **options)
+
+        <a class="method-permalink" href="#expected_open_pore_level%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L85" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="expected_open_pore_level(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>expected_open_pore_level</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#expected_open_pore_level%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L85" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="median_before(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>median_before</strong>(*args, **options)
+
+        <a class="method-permalink" href="#median_before%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L70" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="median_before(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>median_before</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#median_before%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L70" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="metadata:Metadata-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>metadata</strong> : <a href="../Pod5/Metadata.html">Metadata</a>
+
+        <a class="method-permalink" href="#metadata%3AMetadata-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L61" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="num_minknow_events(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>num_minknow_events</strong>(*args, **options)
+
+        <a class="method-permalink" href="#num_minknow_events%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L77" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="num_minknow_events(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>num_minknow_events</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#num_minknow_events%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L77" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="num_reads_since_mux_change(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>num_reads_since_mux_change</strong>(*args, **options)
+
+        <a class="method-permalink" href="#num_reads_since_mux_change%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L82" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="num_reads_since_mux_change(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>num_reads_since_mux_change</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#num_reads_since_mux_change%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L82" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="open_pore_level(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>open_pore_level</strong>(*args, **options)
+
+        <a class="method-permalink" href="#open_pore_level%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L84" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="open_pore_level(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>open_pore_level</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#open_pore_level%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L84" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pore_type(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>pore_type</strong>(*args, **options)
+
+        <a class="method-permalink" href="#pore_type%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L67" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pore_type(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>pore_type</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#pore_type%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L67" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="predicted_scaling_scale(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>predicted_scaling_scale</strong>(*args, **options)
+
+        <a class="method-permalink" href="#predicted_scaling_scale%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L80" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="predicted_scaling_scale(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>predicted_scaling_scale</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#predicted_scaling_scale%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L80" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="predicted_scaling_shift(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>predicted_scaling_shift</strong>(*args, **options)
+
+        <a class="method-permalink" href="#predicted_scaling_shift%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L81" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="predicted_scaling_shift(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>predicted_scaling_shift</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#predicted_scaling_shift%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L81" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="read_id(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>read_id</strong>(*args, **options)
+
+        <a class="method-permalink" href="#read_id%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="read_id(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>read_id</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#read_id%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="read_number(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>read_number</strong>(*args, **options)
+
+        <a class="method-permalink" href="#read_number%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="read_number(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>read_number</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#read_number%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="run_info(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>run_info</strong>(*args, **options)
+
+        <a class="method-permalink" href="#run_info%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="run_info(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>run_info</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#run_info%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sample_count:UInt64-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>sample_count</strong> : UInt64
+
+        <a class="method-permalink" href="#sample_count%3AUInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L62" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="selected_read_level(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>selected_read_level</strong>(*args, **options)
+
+        <a class="method-permalink" href="#selected_read_level%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L86" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="selected_read_level(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>selected_read_level</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#selected_read_level%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L86" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="signal:Slice(Int16)-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>signal</strong> : Slice(Int16)
+
+        <a class="method-permalink" href="#signal%3ASlice%28Int16%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L63" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="signal_pa:Slice(Float32)-instance-method">
+      <div class="signature">
+        
+        def <strong>signal_pa</strong> : Slice(Float32)
+
+        <a class="method-permalink" href="#signal_pa%3ASlice%28Float32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L96" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="start_sample(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>start_sample</strong>(*args, **options)
+
+        <a class="method-permalink" href="#start_sample%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="start_sample(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>start_sample</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#start_sample%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="start_time:Float64-instance-method">
+      <div class="signature">
+        
+        def <strong>start_time</strong> : Float64
+
+        <a class="method-permalink" href="#start_time%3AFloat64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L92" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_since_mux_change(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>time_since_mux_change</strong>(*args, **options)
+
+        <a class="method-permalink" href="#time_since_mux_change%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L83" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_since_mux_change(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>time_since_mux_change</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#time_since_mux_change%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L83" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tracked_scaling_scale(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>tracked_scaling_scale</strong>(*args, **options)
+
+        <a class="method-permalink" href="#tracked_scaling_scale%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L78" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tracked_scaling_scale(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>tracked_scaling_scale</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#tracked_scaling_scale%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L78" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tracked_scaling_shift(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>tracked_scaling_shift</strong>(*args, **options)
+
+        <a class="method-permalink" href="#tracked_scaling_shift%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L79" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tracked_scaling_shift(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>tracked_scaling_shift</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#tracked_scaling_shift%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L79" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="well(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>well</strong>(*args, **options)
+
+        <a class="method-permalink" href="#well%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L72" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="well(*args,**options,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>well</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#well%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/kojix2/pod5.cr/blob/f35fb580943e19f8fcd64fa4f50db481127560e8/src/pod5/metadata.cr#L72" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+</div>
+
+</body>
+</html>
